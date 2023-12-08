@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign Up form</h1>
+    <form id="form">
+        <label for="name">Name</label>
+        <input type="name" id="name"placeholder="Enter Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter Your email" required>
+
+        <label for="password">Create Password</label>
+        <input type="password" id="password"placeholder="Crete Your password" required>
+
+        <labelfor="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder= "Confirm Password" required>
+        <input type="submit" val="signUp">
+    </form>
+    <script>
+        document.getElementById("form").addEventListener('submit',submitFun)
+        function submitFun(e){
+            e.preventDefault()
+            const name=document.getElementById("name").value
+            const email=document.getElementById("email").value
+            const password=document.getElementById("password").value
+            const confirmPassword=document.getElementById("confirm-password").value
+            if(password!==confirmPassword){
+                alert("both password fields should be same")
+                return
+                
+            }
+            let userData={name:name,email:email,password:password}
+            localStorage.setItem('userData',JSON.stringify(userData))
+            alert("successfully signup process completed")
+            window.location.href="login.html"
+        }
+    </script>
+</body>
+</html>

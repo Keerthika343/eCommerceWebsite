@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+</head>
+<body>
+    <h1>Online Store</h1>
+    <button id="logIn">Log In</button>
+    <button id="signUp">Sign Up</button>
+    
+</body>
+<script>
+    let logIn=document.getElementById('logIn')
+    let signUp=document.getElementById("signUp")
+    logIn.addEventListener('click',loginFun)
+    signUp.addEventListener('click',signupFun)
+    function loginFun(){
+        window.location.href="login.html"
+    }
+    function signupFun(){
+        window.location.href="signUp.html"
+    }
+</script>
+</html>
